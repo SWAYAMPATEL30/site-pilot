@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=800&size=42&duration=3000&pause=1000&color=6366F1&center=true&vCenter=true&width=600&lines=⚡+Site+Pilot;AI+Website+Builder;Build+Smarter%2C+Ship+Faster" alt="Site Pilot" />
+
 
 <p align="center">
   <strong>Multi-Tenant AI-Powered Website Builder — Generate, Deploy & Manage Websites in Seconds.</strong>
@@ -257,10 +257,3 @@ site-pilot/
 
 ---
 
-<div align="center">
-
-**Built with ❤️ by [SWAYAMPATEL30](https://github.com/SWAYAMPATEL30)**
-
-⭐ Star this repo if you found it useful!
-
-</div>
