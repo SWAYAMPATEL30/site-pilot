@@ -1,6 +1,6 @@
-# 🚀 TenantFlow AI — Multi-Tenant AI Website Builder
+# 🚀 Site Pilot — Multi-Tenant AI Website Builder
 
-**TenantFlow AI** is a powerful multi-tenant platform that uses AI to build and deploy fully styled websites instantly. Users describe their ideas in natural language, and the platform generates responsive designs in real-time. Every unique generated site is augmented by an auto-structured dynamic backend API through smart agent flow frameworks.
+**Site Pilot** is a powerful multi-tenant platform that uses AI to build and deploy fully styled websites instantly. Users describe their ideas in natural language, and the platform generates responsive designs in real-time. Every unique generated site is augmented by an auto-structured dynamic backend API through smart agent flow frameworks.
 
 ---
 

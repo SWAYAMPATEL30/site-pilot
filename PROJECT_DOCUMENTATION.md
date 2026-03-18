@@ -1,4 +1,4 @@
-# TenantFlow AI — Project Documentation
+# Site Pilot — Project Documentation
 
 ## Table of Contents
 1. [Project Overview](#1-project-overview)
@@ -18,7 +18,7 @@
 
 ## 1. Project Overview
 
-**TenantFlow AI** is a multi-tenant, AI-powered website builder platform. Users describe a website in natural language, and the platform generates a fully styled, responsive HTML website in real-time using LLM streaming. Each generated website also receives an auto-generated dynamic backend API through a smart agent flow.
+**Site Pilot** is a multi-tenant, AI-powered website builder platform. Users describe a website in natural language, and the platform generates a fully styled, responsive HTML website in real-time using LLM streaming. Each generated website also receives an auto-generated dynamic backend API through a smart agent flow.
 
 ### Key Capabilities
 - 🤖 AI-powered website generation via Groq (LLaMA 3.3 70B)
@@ -664,4 +664,4 @@ npm run dev
 ---
 
 *Document generated: February 21, 2026*
-*Platform: TenantFlow AI v1.0*
+*Platform: Site Pilot v1.0*

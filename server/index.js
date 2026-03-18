@@ -42,7 +42,7 @@ app.use('/api/site-backends', siteBackendRoutes);
 app.use('/api/export', exportRoutes);
 
 // Health check
-app.get('/api/health', (req, res) => res.json({ success: true, message: 'TenantFlow AI API running', timestamp: new Date().toISOString() }));
+app.get('/api/health', (req, res) => res.json({ success: true, message: 'Site Pilot API running', timestamp: new Date().toISOString() }));
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -70,6 +70,6 @@ app.use((err, req, res, next) => {
 // Start
 connectDB().then(() => {
     app.listen(PORT, () => {
-        console.log(`🚀 TenantFlow AI API running on port ${PORT}`);
+        console.log(`🚀 Site Pilot API running on port ${PORT}`);
     });
 });
