@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Light Mode (Default) */
+  --primary: #4F46E5;
+  --bg-primary: #FFFFFF;
+  --bg-surface: #F9FAFB;
+  --text-high: #000000;
+  --text-muted: #4B5563;
+  --border-color: #E5E7EB;
+
+  /* Typography */
+  --font-primary: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Grid & Spacing */
+  --grid-base: 8px;
+  --gutter: 24px;
+
+  /* Radii */
+  --radius-hard: 0px;
+  --radius-subtle: 6px;
+
+  /* Transitions */
+  --transition-base: 200ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* --- Mobile Nav Rules --- */
+.mobile-menu-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .mobile-menu-btn {
+    display: flex;
+  }
+}
+
+/* --- Features Sticky Scroll Rules --- */
+@media (max-width: 992px) {
+  /* On smaller screens, stack the layout instead of keeping it side-by-side */
+  .features-container {
+    flex-direction: column;
+    gap: 32px !important;
+  }
+
+  /* Remove the sticky behavior on mobile so users can just scroll normally */
+  .features-sticky-nav {
+    position: static !important;
+    width: 100% !important;
+  }
+
+  /* Make the graphics take up the full width */
+  .features-scroll-graphics {
+    width: 100% !important;
+    gap: 40px !important;
+  }
+
+  /* Make the boxes slightly shorter on mobile */
+  .features-scroll-graphics > div {
+    height: auto !important;
+    min-height: 300px !important;
+    padding: 24px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark Mode */
+    --primary: #6366F1;
+    --bg-primary: #000000;
+    --bg-surface: #0A0A0A;
+    --text-high: #FFFFFF;
+    --text-muted: #A1A1AA;
+    --border-color: #1F1F23;
+  }
+}
+
+/* Global Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  :root {
+    --gutter: 16px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: clamp(18px, 5vw, 32px);
+  }
+
+  .btn {
+    font-size: 13px;
+    padding: calc(var(--grid-base) * 1.25) calc(var(--grid-base) * 2.5);
+  }
+
+  .btn-lg {
+    padding: calc(var(--grid-base) * 1.5) calc(var(--grid-base) * 3);
+    font-size: 14px;
+  }
+
+  .card {
+    padding: calc(var(--gutter) - 4px);
+  }
+
+  .input, select, textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  /* Hide desktop navigation elements */
+  .desktop-only {
+    display: none !important;
+  }
+
+  /* Show mobile-only elements */
+  .mobile-only {
+    display: block !important;
+  }
+
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+
+  /* Hide logo text on mobile */
+  .logo-text {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-only {
+    display: none !important;
+  }
+
+  .mobile-menu-btn {
+    display: none !important;
+  }
+
+  .logo-text {
+    display: block !important;
+  }
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--bg-primary);
+  color: var(--text-high);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-high);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--grid-base);
+  padding: calc(var(--grid-base) * 1.5) calc(var(--grid-base) * 3);
+  border-radius: var(--radius-hard);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  border: 1px solid transparent;
+  font-family: var(--font-primary);
+  white-space: nowrap;
+  box-shadow: none !important;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  background: var(--text-high);
+  color: var(--bg-primary);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-high);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-surface);
+  border-color: var(--text-muted);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-muted);
+}
+
+.btn-ghost:hover {
+  color: var(--text-high);
+  background: var(--bg-surface);
+}
+
+.btn-sm {
+  padding: var(--grid-base) calc(var(--grid-base) * 2);
+  font-size: 12px;
+}
+
+.btn-lg {
+  padding: calc(var(--grid-base) * 2) calc(var(--grid-base) * 4);
+  font-size: 16px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Cards (Bento Grid) */
+.card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-subtle);
+  padding: var(--gutter);
+  transition: all var(--transition-base);
+  box-shadow: none !important;
+}
+
+.card:hover {
+  border-color: var(--text-muted);
+}
+
+/* Inputs */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--grid-base);
+}
+
+.input-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-high);
+}
+
+.input, select, textarea {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-high);
+  padding: calc(var(--grid-base) * 1.5);
+  border-radius: var(--radius-hard);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  transition: all var(--transition-base);
+  box-shadow: none !important;
+  outline: none;
+}
+
+.input:focus, select:focus, textarea:focus {
+  border-color: var(--primary);
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Utilities */
+.mono {
+  font-family: var(--font-mono);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.border-b {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.border-t {
+  border-top: 1px solid var(--border-color);
+}
+
+.border-r {
+  border-right: 1px solid var(--border-color);
+}
+
+.border-l {
+  border-left: 1px solid var(--border-color);
+}
+
+/* Grid System */
+.grid {
+  display: grid;
+  gap: var(--gutter);
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Custom scrollbar for Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) var(--bg-primary);
+}
+
+/* Animations */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* Spinner */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-color);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: var(--radius-hard);
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface);
+  color: var(--text-high);
+}

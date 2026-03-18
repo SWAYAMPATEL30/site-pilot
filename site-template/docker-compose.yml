@@ -1,0 +1,19 @@
+services:
+  site:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      MONGO_URI: mongodb+srv://geetraj:geeta20@cluster0.ar5zngf.mongodb.net/
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:7
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
